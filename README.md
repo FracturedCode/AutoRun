@@ -1,4 +1,6 @@
-# Auto Run
+# AutoRun Alternative
+
+This is a fork of Emonadeo's [AutoRun](https://www.curseforge.com/minecraft/mc-mods/autorun-fabric). I made it because I wanted to have two sprint keys, one on my keyboard and one on my mouse. This happens to be especially useful while autorunning and doing something else and the sprint happens to cancel. Also I've gotten way too used to being able to double up keybinds in other games.
 
 ## Installation
 
@@ -24,4 +26,4 @@ These keybinds can be customized in the controls options.
 Yes.
 
 ### Where can I download the mod?
-The only official distributions are [GitHub](https://github.com/Emonadeo/AutoRun/releases), [CurseForge](https://www.curseforge.com/minecraft/mc-mods/autorun-fabric) and [Modrinth](https://modrinth.com/mod/autorun). Please let me know if you find any other website distributing this mod.
+The only official distributions are [my Gitea](https://git.fracturedcode.net/FracturedCode/AutoRun), [CurseForge](https://www.curseforge.com/minecraft/mc-mods/autorun-fabric), [my maven repository](https://maven.fracturedcode.net/releases/net/fracturedcode/autorun-alternative) and [GitHub](https://github.com/FracturedCode/AutoRun/releases)
