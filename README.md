@@ -26,4 +26,4 @@ These keybinds can be customized in the controls options.
 Yes.
 
 ### Where can I download the mod?
-The only official distributions are [my Gitea](https://git.fracturedcode.net/FracturedCode/AutoRun), [CurseForge](https://www.curseforge.com/minecraft/mc-mods/autorun-fabric), [my maven repository](https://maven.fracturedcode.net/releases/net/fracturedcode/autorun-alternative) and [GitHub](https://github.com/FracturedCode/AutoRun/releases)
+The only official distributions are [my Gitea](https://git.fracturedcode.net/FracturedCode/AutoRun), [CurseForge](https://www.curseforge.com/minecraft/mc-mods/autorun-alternative), [my maven repository](https://maven.fracturedcode.net/releases/net/fracturedcode/autorun-alternative) and [GitHub](https://github.com/FracturedCode/AutoRun/releases)
