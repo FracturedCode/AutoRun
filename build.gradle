@@ -9,7 +9,7 @@ sourceCompatibility = JavaVersion.VERSION_16
 targetCompatibility = JavaVersion.VERSION_16
 
 archivesBaseName = project.archives_base_name
-version = "${project.supported_versions}-${project.mod_version}"
+version = "${project.generic_support_version}-${project.mod_version}"
 group = project.maven_group
 
 repositories {
@@ -71,8 +71,12 @@ jar {
 publishing {
     publications {
         mavenJava(MavenPublication) {
+            artifactId project.archives_base_name
             // add all the jars that should be included when publishing to maven
             artifact(remapJar) {
+                builtBy remapJar
+            }
+            artifact(jar) {
                 builtBy remapJar
             }
             artifact(sourcesJar) {
@@ -83,51 +87,17 @@ publishing {
 
     // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
-        // Add repositories to publish to here.
-        // Notice: This block does NOT have the same function as the block in the top level.
-        // The repositories here will be used for publishing your artifact, not for
-        // retrieving dependencies.
-    }
-}
-
-curseforge {
-    if (project.hasProperty("curseForgeApiKey") || System.getenv("curseForgeApiKey") != null) {
-        apiKey = project.hasProperty("curseForgeApiKey") ? project.property("curseForgeApiKey") : System.getenv("curseForgeApiKey")
-        project {
-            id = project.project_id
-            releaseType = project.release_type
-            changelogType = "text"
-            changelog = file("changelog.txt")
-
-            addGameVersion "1.17"
-            addGameVersion "1.17.1"
-            addGameVersion "Java 16"
-            addGameVersion "Fabric"
-
-            relations {
-                requiredLibrary "fabric-api"
-            }
-
-            mainArtifact(remapJar)
-            afterEvaluate {
-                uploadTask.dependsOn(remapJar)
+        if (mavenUsername != null && mavenPassword != null) {
+            maven {
+                url "https://maven.fracturedcode.net/releases"
+                credentials {
+                    username = autorunUsername
+                    password = autorunPassword
+                }
+                authentication {
+                    basic(BasicAuthentication)
+                }
             }
         }
-        options {
-            forgeGradleIntegration = false
-        }
     }
-}
-
-import com.modrinth.minotaur.TaskModrinthUpload
-
-task publishModrinth (type: TaskModrinthUpload) {
-    token = project.hasProperty("modrinthApiKey") ? project.property("modrinthApiKey") : System.getenv("modrinthApiKey")
-    projectId = "2i7tg1Wv"
-    versionName = "v${project.mod_version} (Minecraft 1.17)"
-    versionNumber = version
-    uploadFile = remapJar
-    addGameVersion "1.17"
-    addGameVersion "1.17.1"
-    addLoader "fabric"
 }

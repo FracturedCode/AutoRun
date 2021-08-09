@@ -1,16 +1,17 @@
 {
   "schemaVersion": 1,
-  "id": "autorun",
+  "id": "autorun-alternative",
   "version": "${mod_version}",
 
-  "name": "AutoRun",
+  "name": "AutoRun Alternative",
   "description": "Hands-free walking and sprinting",
   "authors": [
+    "FracturedCode",
     "Emonadeo"
   ],
   "contact": {
-    "homepage": "https://github.com/Emonadeo",
-    "sources": "https://github.com/Emonadeo/AutoRun"
+    "homepage": "https://git.fracturedcode.net/FracturedCode/AutoRun",
+    "sources": "https://git.fracturedcode.net/FracturedCode/AutoRun"
   },
 
   "license": "CC0-1.0",
@@ -26,7 +27,7 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.9.1",
+    "fabricloader": ">=0.11.0",
     "fabric": "*",
     "minecraft": "1.17.x"
   },
